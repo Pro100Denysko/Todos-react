@@ -3,7 +3,7 @@ import './ProgressBar.css'
 function ProgressBar(props) {
     return (
         <div className='progress'>
-            <b>Open </b> {props.current}
+            <b>Open </b> {props.open}
             <b>Done </b> {props.done}
         </div>
     )

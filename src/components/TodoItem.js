@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "./TodoItem.css";
+import { useDispatch } from 'react-redux'
+import { checkTodo } from "./Todos";
 
 function TodoItem(props) {
     const [checked, setChecked] = useState(false)
 
+    const dispatch = useDispatch();
+
     const handleChecked = () => {
         setChecked(!checked)
-        props.setDoneTaskCount(checked ? props.doneTaskCount - 1 : props.doneTaskCount + 1);
+        dispatch(checkTodo(props.test, !checked))
     }
 
     return (
