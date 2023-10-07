@@ -15,8 +15,8 @@ function TodoItem(props) {
 
     return (
         <div className='todo_item'>
-            <label class="checkbox-label">
-                <input type="checkbox" class="checkbox-input"
+            <label className="checkbox-label">
+                <input type="checkbox" className="checkbox-input"
                     checked={checked}
                     onChange={handleChecked}
                 />
