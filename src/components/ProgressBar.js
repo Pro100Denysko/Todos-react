@@ -1,10 +1,15 @@
 import './ProgressBar.css'
+import {Badge, InputLabel} from "@mui/material";
 
 function ProgressBar(props) {
     return (
         <div className='progress'>
-            <b>Open </b> {props.open}
-            <b>Done </b> {props.done}
+            <Badge badgeContent={props.open} color="primary">
+                <InputLabel htmlFor="custom-input">Open</InputLabel>
+            </Badge>
+            <Badge badgeContent={props.done} color="primary">
+                <InputLabel htmlFor="custom-input">Done</InputLabel>
+            </Badge>
         </div>
     )
 }

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./TodoItem.css";
-import { useDispatch } from 'react-redux'
-import { checkTodo } from "./Todos";
+import {useDispatch} from 'react-redux'
+import {checkTodo} from "./Todos";
+import {Checkbox, FormControlLabel} from "@mui/material";
 
 function TodoItem(props) {
     const [checked, setChecked] = useState(false)
@@ -15,13 +16,10 @@ function TodoItem(props) {
 
     return (
         <div className='todo_item'>
-            <label className="checkbox-label">
-                <input type="checkbox" className="checkbox-input"
-                    checked={checked}
-                    onChange={handleChecked}
-                />
-                {props.todo}
-            </label>
+            <FormControlLabel control={<Checkbox defaultChecked={false}/>}
+                              onChange={handleChecked}
+                              label={props.todo}
+            />
         </div>
     )
 }

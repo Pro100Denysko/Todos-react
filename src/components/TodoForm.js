@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./TodoForm.css"
+import {TextField} from "@mui/material";
 
 function TodoForm(props) {
     const [enteredTodo, setEnteredTodo] = useState('')
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            console.log(event);
-
             const todoData = {
                 todo: enteredTodo,
                 done: false
@@ -19,12 +18,12 @@ function TodoForm(props) {
 
     return (
         <div className="todo">
-            <label>TODO</label>
-            <input
-                type="text"
-                value={enteredTodo}
-                onChange={(event) => setEnteredTodo(event.target.value)}
-                onKeyDown={handleKeyDown} />
+            <TextField label="Enter TODO"
+                       variant={"outlined"}
+                       margin={"normal"}
+                       value={enteredTodo}
+                       onChange={(event) => setEnteredTodo(event.target.value)}
+                       onKeyDown={handleKeyDown}/>
         </div>
     )
 }
