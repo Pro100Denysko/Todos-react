@@ -1,8 +1,14 @@
 import React, {useState} from "react";
-import "./TodoItem.css";
 import {useDispatch} from 'react-redux'
 import {checkTodo} from "./Todos";
 import {Checkbox, FormControlLabel} from "@mui/material";
+import styled from "styled-components";
+
+const StyledTodoItem = styled.div`
+  padding: 10px;
+  background-color: #f9f9f9;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+`;
 
 function TodoItem(props) {
     const [checked, setChecked] = useState(false)
@@ -15,12 +21,13 @@ function TodoItem(props) {
     }
 
     return (
-        <div className='todo_item'>
-            <FormControlLabel control={<Checkbox defaultChecked={false}/>}
+        <StyledTodoItem>
+            <FormControlLabel control={
+                <Checkbox checked={checked}/>}
                               onChange={handleChecked}
                               label={props.todo}
             />
-        </div>
+        </StyledTodoItem>
     )
 }
 

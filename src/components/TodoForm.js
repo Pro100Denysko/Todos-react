@@ -1,6 +1,14 @@
 import React, {useState} from "react";
-import "./TodoForm.css"
 import {TextField} from "@mui/material";
+import styled from "styled-components";
+
+const StyledTodoForm = styled.div`
+  display: flex;
+  padding: 0.2rem;
+  margin: 0.5rem 0;
+  flex-direction: row;
+  justify-content: center;
+`;
 
 function TodoForm(props) {
     const [enteredTodo, setEnteredTodo] = useState('')
@@ -17,14 +25,14 @@ function TodoForm(props) {
     }
 
     return (
-        <div className="todo">
+        <StyledTodoForm>
             <TextField label="Enter TODO"
                        variant={"outlined"}
                        margin={"normal"}
                        value={enteredTodo}
                        onChange={(event) => setEnteredTodo(event.target.value)}
                        onKeyDown={handleKeyDown}/>
-        </div>
+        </StyledTodoForm>
     )
 }
 
