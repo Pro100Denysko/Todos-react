@@ -27,7 +27,7 @@ function App() {
       {todos.map((element) => (
         <TodoItem
           key={element.id}
-          test={element.id}
+          id={element.id}
           todo={element.todoItem}
           done={element.done} />
       ))}

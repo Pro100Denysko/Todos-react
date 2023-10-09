@@ -17,7 +17,7 @@ function TodoItem(props) {
 
     const handleChecked = () => {
         setChecked(!checked)
-        dispatch(checkTodo(props.test, !checked))
+        dispatch(checkTodo(props.id, !checked))
     }
 
     return (
